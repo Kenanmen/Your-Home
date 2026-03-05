@@ -1,0 +1,135 @@
+.header {
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 15px;
+  z-index: 4;
+  transition: var(--transition);
+}
+
+.header.active {
+  box-shadow: var(--shadow-1);
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: var(--fw-600);
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+}
+
+.navToggleBtn {
+  font-size: 30px;
+  color: var(--oxford-blue);
+  flex-shrink: 0;
+  padding: 5px;
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 120px;
+  }
+
+  .headerActions {
+    gap: 5px;
+  }
+
+  .navToggleBtn {
+    font-size: 25px;
+  }
+}
+
+.navbar {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: var(--white);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: 0.25s var(--cubic-out);
+}
+
+.navbar.active {
+  max-height: 260px;
+  visibility: visible;
+  box-shadow: var(--shadow-1);
+  transition-duration: 0.5s;
+}
+
+.navbarList {
+  margin-block: 10px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.navbar.active .navbarList {
+  opacity: 1;
+}
+
+.navbarLink {
+  color: var(--oxford-blue);
+  font-weight: var(--fw-500);
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  display: block;
+}
+
+.navbarLink:hover {
+  color: var(--green-pigment);
+}
+
+@media (min-width: 992px) {
+  .headerContainer {
+    gap: 30px;
+  }
+
+  .navToggleBtn {
+    display: none;
+  }
+
+  .navbar,
+  .navbar.active {
+    all: unset;
+    margin-inline-start: 0;
+  }
+
+  .navbarList {
+    margin-block: 0;
+    opacity: 1;
+    display: flex;
+  }
+
+  .navbarLink {
+    padding-inline: 20px;
+  }
+
+  .headerActions {
+    margin-inline-start: 0;
+  }
+}

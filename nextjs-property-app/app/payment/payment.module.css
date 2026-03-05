@@ -1,0 +1,122 @@
+.container {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: var(--white);
+  border-radius: var(--radius-16);
+  box-shadow: var(--shadow-3);
+}
+
+.row {
+  display: grid;
+  gap: 40px;
+}
+
+.col {
+  width: 100%;
+}
+
+.title {
+  color: var(--green-pigment);
+  margin-bottom: 20px;
+  font-size: var(--fs-2);
+}
+
+.inputBox {
+  margin-bottom: 20px;
+}
+
+.inputBox input,
+.inputBox select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--gainsboro);
+  border-radius: var(--radius-6);
+  font-size: var(--fs-5);
+  outline: none;
+  transition: var(--transition);
+}
+
+.inputBox input:focus,
+.inputBox select:focus {
+  border-color: var(--green-pigment);
+}
+
+.inputBox label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--oxford-blue);
+  font-weight: var(--fw-500);
+  font-size: 1.5rem;
+}
+
+.flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--green-pigment);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-6);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 20px;
+}
+
+.submitBtn:hover {
+  background-color: var(--black);
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 60px auto 20px;
+    padding: 20px 15px;
+  }
+
+  .row {
+    gap: 30px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .inputBox {
+    margin-bottom: 15px;
+  }
+
+  .inputBox input,
+  .inputBox select {
+    padding: 10px;
+    font-size: 1.4rem;
+  }
+
+  .inputBox label {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+
+  .flex {
+    gap: 10px;
+  }
+
+  .submitBtn {
+    padding: 12px;
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

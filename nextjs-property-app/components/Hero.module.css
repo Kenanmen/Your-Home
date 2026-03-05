@@ -1,0 +1,85 @@
+.hero {
+  padding-block-start: 80px;
+}
+
+.heroBg {
+  background-image: url('/images/lgg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-16);
+  overflow: hidden;
+}
+
+.heroContent {
+  background-color: var(--oxford-blue_60);
+  padding-block: 100px;
+  padding-inline: 20px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.heroTitle {
+  max-width: 16ch;
+  margin-inline: auto;
+  color: var(--white);
+  line-height: 1.5;
+  margin-block-end: 20px;
+  font-size: var(--fs-1);
+}
+
+.heroText {
+  color: rgb(241, 236, 239);
+  font-size: var(--fs-4);
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding-block: 80px;
+    padding-inline: 15px;
+  }
+
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+
+  .heroText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .heroContent {
+    padding-block: 120px;
+    padding-inline: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    text-align: left;
+    padding-inline: calc(50% - 350px);
+  }
+
+  .heroTitle {
+    margin-inline: 0;
+  }
+
+  .heroText {
+    max-width: 50ch;
+  }
+}
+
+@media (min-width: 992px) {
+  .heroContent {
+    padding-inline: calc(50% - 450px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .heroContent {
+    padding-inline: calc(50% - 560px);
+  }
+}

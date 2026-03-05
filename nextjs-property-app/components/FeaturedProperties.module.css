@@ -1,0 +1,71 @@
+.propertyTitle {
+  width: 100%;
+  display: flex;
+  padding: 30px 15px;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.propertyList {
+  width: 100%;
+  padding-inline: 15px;
+  margin-top: 30px;
+  display: grid;
+  gap: 25px;
+}
+
+.moreBtn {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 15px;
+  font-weight: bold;
+  color: hsl(290, 67%, 27%);
+  font-size: 1.6rem;
+}
+
+@media (max-width: 480px) {
+  .propertyTitle {
+    font-size: 2.4rem;
+    padding: 20px 10px;
+  }
+
+  .propertyList {
+    gap: 20px;
+    padding-inline: 10px;
+  }
+
+  .moreBtn {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 481px) {
+  .propertyTitle {
+    font-size: 3.2rem;
+    padding: 40px 20px;
+  }
+
+  .propertyList {
+    width: 90%;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .propertyList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .propertyList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
