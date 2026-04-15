@@ -46,7 +46,7 @@ export default function ListingsPage() {
           <div className="container">
             <div className={styles.heroBg}>
               <div className={styles.heroContent}>
-                <h1 className={styles.heroTitle}>"Home is where the heart is."</h1>
+                <h1 className={styles.heroTitle}>&quot;Home is where the heart is.&quot;</h1>
                 <h4 className={styles.heroText}>
                   Discover your dream home hassle-free on our real estate platform,
                   <br />where your heart finds its perfect match, YourHome.

@@ -21,7 +21,7 @@ export default function About() {
           </h2>
           <p className="section-text">
             Welcome to Your Dream Home, where your aspirations for a perfect home meet reality.
-            We're passionate about connecting buyers with their dream homes and sellers
+            We&apos;re passionate about connecting buyers with their dream homes and sellers
             with the ideal buyers, making the home buying and selling process smooth and effortless.
           </p>
 

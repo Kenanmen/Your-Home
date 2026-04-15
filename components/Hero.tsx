@@ -7,7 +7,7 @@ export default function Hero() {
         <div className={styles.heroBg}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
-              "Home is where the heart is."
+              &quot;Home is where the heart is.&quot;
             </h1>
             <h4 className={styles.heroText}>
               Discover your dream home hassle-free on our real estate platform,

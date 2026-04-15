@@ -8,6 +8,7 @@ import styles from './Header.module.css'
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [userName, setUserName] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,27 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const loadSession = async () => {
+      try {
+        const response = await fetch('/api/auth/me')
+        const data = (await response.json()) as { user: { name: string } | null }
+        setUserName(data.user?.name ?? null)
+      } catch {
+        setUserName(null)
+      }
+    }
+
+    loadSession()
+  }, [])
+
+  const handleLogout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' })
+    setUserName(null)
+    setIsNavOpen(false)
+    window.location.href = '/login'
+  }
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.active : ''}`}>
@@ -35,7 +57,17 @@ export default function Header() {
         </nav>
 
         <div className={styles.headerActions}>
-          <Link href="/signup" className="btn btn-secondary">SignUp</Link>
+          {userName ? (
+            <>
+              <span className={styles.navbarLink}>Hi, {userName}</span>
+              <button type="button" className="btn btn-secondary" onClick={handleLogout}>Logout</button>
+            </>
+          ) : (
+            <>
+              <Link href="/login" className="btn btn-secondary">Login</Link>
+              <Link href="/signup" className="btn btn-secondary">SignUp</Link>
+            </>
+          )}
           <Link href="/post" className="btn btn-secondary">Post</Link>
         </div>
 
