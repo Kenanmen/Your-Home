@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "postinstall": "prisma generate",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev"
+    "prisma:db:push": "dotenv -e .env.local -o -- prisma db push",
+    "prisma:migrate": "dotenv -e .env.local -o -- prisma migrate dev"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
@@ -28,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv-cli": "^11.0.0",
     "eslint": "^8",
     "eslint-config-next": "^14.2.35",
     "typescript": "^5"
